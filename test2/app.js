@@ -7,17 +7,17 @@ var MyClass = /** @class */ (function () {
     MyClass.prototype.createFile = function () {
 
         const array1 = [];
-        for(let i = 1; i < 6; i++) {
+        const array2 = []
+        for(let i = 1; i < 6 + 1; i++) {
             array1.push(i)
+            array2.push(0)
+            
         }
-        // pass a function to map
-        const map1 = array1.map(x => x);
-        
-        const typedArray1 = new Int8Array(map1.length);
-        typedArray1[map1] = '';
-        console.log(typedArray1);
 
-        this.fs.writeFile('file.txt', typedArray1, function (err) {
+        console.log(array1.push(array2.join(" ")),'array');
+        // array1.join("")
+
+        this.fs.writeFile('file.txt', array1.join(" "), function (err) {
             if (err) {
                 return console.error(err);
             }
